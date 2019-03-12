@@ -1,0 +1,32 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "cognito": {
+    "cognitoUserPoolId": "cognitoUserPoolId",
+    "region": "region",
+    "tokenExpiration": 7200000,
+    "tokenUse": "id"
+  },
+  "authentication": {
+    "secret": "7dad5484f521e1afe3bb2b85350921f425069f3bc9d4b13c95f0ca7463c28dfef69bd91bca5a99d8d5f773768f29c45b2b55efaebfa872531d480c52db76ef304a9205e2f1cbc759c0f5b9164be8ae91ff535e76f419fa08f98098e444764353641db093e291042aaa4cdf44b13dc69154f4095b0ae079247397103c6f7c89f20700010090b4cb543ee4e6c3d3e41abca3ce76967f09fb9ae9d0529086301154e2d09d81b1d9fb0195312ae51e89841e22742f26008bf6c432b308d357bc72b783a6923e930934e49c7d39aca2d6cbdf06698ce37eba03c74486497521c8691aa84efdcef12b73c3d9ea103b49ddc2a8e001f96f20abbccdcbb18f464d19cc1e",
+    "strategies": ["jwt", "cognito"],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/feathers_cognito_example"
+}
